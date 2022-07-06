@@ -19,6 +19,7 @@ app.use(express.json())
 //routes here
 app.use('/signup',require("./Controller/signup/signup"))
 app.use('/signin',require('./Controller/login/login'))
+app.use('/profile',require('./Controller/profile/profile'))
 
 app.get('/',(req,res)=>{
     res.send("Hello world");
