@@ -1,13 +1,19 @@
-const mongoose=requrie('mongoose')
+const mongoose=require('mongoose')
 
 
 const jobSchema=new mongoose.Schema({
     recid:String,
-    companyname:recid.companyname,
+    
     jobtype:{
         type:String,
         required:true
     },
+
+    lastDate:{
+        type:Date,
+        required:true
+    },
+
     jobRole:{
         type:String,
         required:true

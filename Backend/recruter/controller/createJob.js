@@ -1,10 +1,10 @@
-const Router=requrire('router')
-const router=Router()
+const Router = require("router");
+const router = Router();
 const Job=require('../model/createJobmodel')
 
 
 router.get('/',(req,res)=>{
-    res.send("This is job pannel")
+    res.send("Recruter can post jobs here")
 })
 
 router.post('/',(req,res)=>{
@@ -13,8 +13,8 @@ router.post('/',(req,res)=>{
     }
     const job=new Job(req.body)
     job.save()
-    .then(()=>{
-        res.json({msg:"Data saved successfully."})
+    .then((data)=>{
+        res.json({msg:`Data saved successfully. \n data:  ${data}`})
     })
     .catch((e)=>{
         res.json({msg:`Error occured while saving the data  ${e}`})

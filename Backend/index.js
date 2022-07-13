@@ -22,6 +22,7 @@ app.use('/signin',require('./Controller/login/login'))
 app.use('/profile',require('./Controller/profile/profile'))
 app.use('/recruter',require('./recruter/controller/r_signup'))
 app.use('/recprofile',require('./recruter/controller/r_profile'))
+app.use('/addjob',require('./recruter/controller/createJob'))
 
 app.get('/',(req,res)=>{
     res.send("Hello world");
