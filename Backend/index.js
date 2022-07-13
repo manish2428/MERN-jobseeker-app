@@ -20,6 +20,8 @@ app.use(express.json())
 app.use('/signup',require("./Controller/signup/signup"))
 app.use('/signin',require('./Controller/login/login'))
 app.use('/profile',require('./Controller/profile/profile'))
+app.use('/recruter',require('./recruter/controller/r_signup'))
+app.use('/recprofile',require('./recruter/controller/r_profile'))
 
 app.get('/',(req,res)=>{
     res.send("Hello world");

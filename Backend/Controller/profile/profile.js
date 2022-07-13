@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/del/:id", async(req, res) => {
     if(!req.params.id){
-        res.status(500).send({errr:"ID should be passed as a parameter"})
+       return res.status(500).send({errr:"ID should be passed as a parameter"})
     }
   try{
     await Profile.deleteOne({ _id: req.params.id })
@@ -34,4 +34,22 @@ router.delete("/del/:id", async(req, res) => {
    
 });
 
+router.put('/update/:id',async(req,res)=>{
+    if(!req.body){
+    return res.status(500).json({err:"THERE IS NO FIELDS TO UPDATE."})
+}
+
+
+    var result=await Profile.findOne(
+    {_id:req.params.id},
+    {$set:req.body})
+    .then((result)=>{
+        res.status(200).sent(result)
+    })
+    .catch((e)=>{
+        res.status(500).json({error:e})
+    })
+
+
+    })
 module.exports = router;

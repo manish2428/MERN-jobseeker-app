@@ -14,6 +14,10 @@ const UserSchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    isRec:{
+        type:Boolean,
+        default:false
+    },
     phone:{
         type:String,
         required:true
